@@ -1,11 +1,13 @@
 server:
-  port: 8761          # Le port standard des annuaires Eureka
+  port: 8761
 
 spring:
   application:
-    name: discovery-service  # Le nom du service
+    name: discovery-service
 
 eureka:
   client:
-    register-with-eureka: false #Je suis le serveur, je ne m'enregistre pas moi-même
-    fetch-registry: false       # Je n'ai pas besoin de télécharger l'annuaire, c'est MOI l'annuaire
+    # Je suis le serveur, je ne m enregistre pas moi-meme
+    register-with-eureka: false
+    # Je n ai pas besoin de telecharger l annuaire, c est MOI l annuaire
+    fetch-registry: false
