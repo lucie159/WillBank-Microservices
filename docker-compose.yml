@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  # 1. Base de données pour le Service Clients
+  db-client:
+    image: postgres:15
+    container_name: willbank-db-client
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=client_db
+    ports:
+      - "5434:5432" # Port PC : Port Conteneur
+
+  # 2. Base de données pour le Service Comptes
+  db-account:
+    image: postgres:15
+    container_name: willbank-db-account
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=account_db
+    ports:
+      - "5435:5432" # Attention : Port 5433 sur ton PC !
+
+  # 3. Base de données pour le Service Transactions
+  db-transaction:
+    image: postgres:15
+    container_name: willbank-db-transaction
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=transaction_db
+    ports:
+      - "5436:5432" # Attention : Port 5434 sur ton PC !
+      
+  # 4. Base de données pour le Service Notification (Logs)
+  db-notification:
+    image: postgres:15
+    container_name: willbank-db-notification
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=notification_db
+    ports:
+      - "5437:5432" # Attention : Port 5435 sur ton PC !
+
+  # 5. RabbitMQ (Le facteur)
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: willbank-rabbitmq
+    ports:
+      - "5672:5672"   # Port pour que les applis Java parlent
+      - "15672:15672" # Port pour l'interface visuelle Web
+    environment:
+      - RABBITMQ_DEFAULT_USER=postgres
+      - RABBITMQ_DEFAULT_PASS=password
