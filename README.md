@@ -59,18 +59,19 @@ Exemple pour créer un client (via curl) :
 
 curl -X POST http://localhost:8081/api/clients \
 -H "Content-Type: application/json" \
--d "{\"nom\":\"Kungne\", \"prenom\":\"Willy\", \"email\":\"willy@test.com\", \"telephone\":\"690000000\", \"adresse\":\"Yaounde\"}"
+-d "{\"nom\":\"nom\", \"prenom\":\"prenom\", \"email\":\"email@gmail.com\", \"telephone\":\"690000000\", \"adresse\":\"adresses\"}"
 
 
 ## Structure du Projet
 
+```text
 WillBank-Microservices/
-├── docker-compose.yml # Configuration de l'infrastructure (DB, RabbitMQ)
-├── discovery-service/ # Serveur Eureka
-├── gateway-service/ # API Gateway (routeur)
-├── client-service/ # Gestion des clients
-├── account-service/ # Gestion des comptes (en cours)
-└── .github/workflows/ # Pipelines CI/CD
+├── docker-compose.yml      # Configuration de l'infrastructure (DB, RabbitMQ)
+├── discovery-service/      # Serveur Eureka
+├── gateway-service/        # API Gateway (routeur)
+├── client-service/         # Gestion des clients
+├── account-service/        # Gestion des comptes (en cours)
+└── .github/workflows/      # Pipelines CI/CD
 
 
 
