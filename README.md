@@ -73,9 +73,19 @@ WillBank-Microservices/
 └── .github/workflows/ # Pipelines CI/CD
 
 
-## Choix Techniques & Apprentissage
-Ce projet met en œuvre plusieurs patterns de conception :
-Architecture en couches : Controller -> Service -> Repository -> Entity.
-DTO Pattern : Séparation stricte entre les Entités (BDD) et les objets exposés (API).
-OpenFeign : Communication synchrone entre microservices (à venir).
-Event-Driven : Communication asynchrone via RabbitMQ (à venir).
+
+##  Choix Techniques & Apprentissages
+
+Ce projet met en œuvre plusieurs **patterns de conception** et bonnes pratiques des architectures microservices :
+
+- **Architecture en couches**  
+  `Controller → Service → Repository → Entity`
+
+- **DTO Pattern**  
+  Séparation stricte entre les **entités persistées (BDD)** et les **objets exposés via l’API**.
+
+- **OpenFeign** *(à venir)*  
+  Communication **synchrone** entre microservices.
+
+- **Event-Driven Architecture** *(à venir)*  
+  Communication **asynchrone** basée sur des événements via **RabbitMQ**.
